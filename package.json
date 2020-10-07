@@ -1,0 +1,22 @@
+{
+  "name": "webproject",
+  "version": "1.0.0",
+  "description": "Web Programming App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaehuun/WebProject.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zaehuun/WebProject/issues"
+  },
+  "homepage": "https://github.com/zaehuun/WebProject#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
