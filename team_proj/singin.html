@@ -12,24 +12,47 @@
         </header>
 
         <hr>
-        <div>
-            <h1>회원가입</h1>
+        
+        <div >
+            <h1 class="text-center">회원가입</h1>
         <br>
-        <form action='singin.html' method="POST" accept-charset="utf-8">
-            <label for="Name:">이름 : </label> 
-            <input type="text" name="username" id="Name:"><br>
-            <label for="Student_id:">학번 : </label> 
-            <input type="number" name="userid" id="Student_id:"><br>
-            <label for="Passward:">비밀번호 : </label> 
-            <input type="password" name="userpassward" id="Passward:"><br>
+        <form class="form-signin" action="#" method="POST" accept-charset="utf-8">
+            <div class="box-shape singin-label">
+                <label class="singin-label"f or="Name">이름</label> <br>
+                <input type="text" name="username" class="log-box" id="Name" placeholder="ex)홍길동" value="" required><br>
+            </div>
+            
+            <div class="box-shape singin-label">
+                <label for="Student_id">학번</label> <br>
+                <input type="number" name="userid" class="log-box" id="Student_id" placeholder="ex)20200000" value="" required><br>
+            </div>
+           
+            <div class="box-shape singin-label">
+                <label for="Passward">비밀번호</label> <br>
+                <input type="password" name="userpassward" class="log-box" id="Passward" placeholder="******" value="" required><br>
+            </div>
+    
+            <hr>
+            <div class="singin-label ">
+                <label style="font-size:1.3em"for="state:">상태</label> <br>
+            
+                <input name="state" type="radio" checked required>
+                <label for="재학">재학</label><br>
+           
+                <input name="state" type="radio" required>
+                <label for="휴학">휴학</label><br>
+            
+                <input name="state" type="radio" required>
+                <label for="졸업">졸업</label>
+            </div>
 
-            <label for="state:">상태 : </label>
-            <input type="radio" name='state' value="재학">재학
-            <input type="radio" name='state' value="휴학">휴학
-            <input type="radio" name='state' value="졸업">졸업
-            <br><br>
-            <input class="button" type="button" value="가입" onclick="self.location='singin.html';"> <!--나중에 이동 페이지 제작-->
+            <br>
+            <button class="log-button" type="submit" onclick="self.location='#';">Join us</button>
         </form>
+
+        <footer>
+            <p  class="text-center" style="color: darkgrey;">&copy;2020.10.07</p> <!--나중에 적절한거 적는건 어떨까요..?ㅎ-->
+        </footer>
         </div>
     </body>
 </html>
