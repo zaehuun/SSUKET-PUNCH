@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body>
+        <header>
+            <img src='./images/logo_sample.png' width="150" height="150" alt="logo_sample"> <!--로고 및 사진 나중에 교체-->
+        </header>
+
+        <hr>
+        <div>
+            <h1>회원가입</h1>
+        <br>
+        <form action='singin.html' method="POST" accept-charset="utf-8">
+            <label for="Name:">이름 : </label> 
+            <input type="text" name="username" id="Name:"><br>
+            <label for="Student_id:">학번 : </label> 
+            <input type="number" name="userid" id="Student_id:"><br>
+            <label for="Passward:">비밀번호 : </label> 
+            <input type="password" name="userpassward" id="Passward:"><br>
+
+            <label for="state:">상태 : </label>
+            <input type="radio" name='state' value="재학">재학
+            <input type="radio" name='state' value="휴학">휴학
+            <input type="radio" name='state' value="졸업">졸업
+            <br><br>
+            <input class="button" type="button" value="가입" onclick="self.location='singin.html';"> <!--나중에 이동 페이지 제작-->
+        </form>
+        </div>
+    </body>
+</html>

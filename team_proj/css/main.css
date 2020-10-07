@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+
+div{
+  text-align: center;
+}
+
+h1{
+  font-size: 3em;
+}
+form{
+  font-size: 1.0em;
+  line-height: 200%;
+  padding: 0.8em 0.5em;
+}
+input{
+  border: 1px solid black;
+  height: 20px;
+}
+.button{
+  background-color: darkgrey;
+  width: 200px;
+  height: 25px;
+  border: none;
+  font-size: 1.0em;
+}

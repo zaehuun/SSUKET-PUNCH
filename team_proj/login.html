@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body> 
+        <div>
+            <br>
+            <img src='./images/logo_sample.png' width="300" height="250" alt='logo_sample' text-align='center'>
+            <br><br>
+            <form action='singin.html' method="POST" accept-charset="utf-8"> <!--로그인 클릭 시 이동할 페이지 나중에 제작-->
+                <label for="Student_id:">학번 : </label> 
+                <input type="number" name="userid" id="Student_id:"><br>
+                <label for="Passward:">비밀번호 : </label> 
+                <input type="password" name="userpassward" id="Passward:"><br>
+                <br>
+                <input class="button" type="button" value="로그인" onclick="self.location='login.html';"> <br> <!--로그인 클릭 시 이동할 페이지 나중에 제작-->
+            </form>
+            <input class="button" type="button" value="회원가입" onclick="self.location='singin.html';"> 
+        </div>
+    </body>
+</html>
