@@ -4,6 +4,7 @@ body {
 
 #sign-up header img {
   width: 150px;
+  cursor: pointer;
 }
 
 #sign-up .form-signup {
