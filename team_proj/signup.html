@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Web Programming App" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+  <body>
+    <div id="sign-up">
+      <header>
+        <img src="./images/logo_sample.png" alt="logo_sample" />
+        <!--로고 및 사진 나중에 교체-->
+      </header>
+      <hr />
+
+      <form class="form-signup" action="#" method="POST" accept-charset="utf-8">
+        <h1 class="title">회원가입</h1>
+        <br />
+        <div class="input-box">
+          <label for="Name">이름</label> <br />
+          <input type="text" name="username" class="log-box" id="Name" placeholder="ex)홍길동" value="" required /><br />
+        </div>
+
+        <div class="input-box">
+          <label for="Student_id">학번</label> <br />
+          <input type="number" name="userid" class="log-box" id="Student-id" placeholder="ex)20200000" value="" required /><br />
+        </div>
+
+        <div class="input-box">
+          <label for="Passward">비밀번호</label> <br />
+          <input type="password" name="userpassward" class="log-box" id="Passward" placeholder="password" value="" required /><br />
+        </div>
+
+        <div class="student-state">
+          <h2>학적상태</h2>
+          <div class="radio-box">
+            <input name="state" id="attending" type="radio" checked required />
+            <label for="attending">재학</label><br />
+          </div>
+          <div class="radio-box">
+            <input name="state" id="take-off" type="radio" required />
+            <label for="take-off">휴학</label><br />
+          </div>
+          <div class="radio-box">
+            <input name="state" id="graduated" type="radio" required />
+            <label for="graduated">졸업</label>
+          </div>
+        </div>
+        <button class="log-button" type="submit" onclick="self.location='#';">회원가입</button>
+      </form>
+
+      <footer>
+        <p class="text-center" style="color: darkgrey">&copy;2020.10.07</p>
+        <!--나중에 적절한거 적는건 어떨까요..?ㅎ / 좋은거같습니다~ -->
+      </footer>
+    </div>
+  </body>
+</html>
