@@ -16,7 +16,7 @@
       </header>
       <hr />
 
-      <form class="form-signup" action="#" method="POST" accept-charset="utf-8">
+      <form class="form-signup" action="http://localhost:3000/register" method="POST" accept-charset="utf-8">
         <h1 class="title">회원가입</h1>
         <br />
         <div class="input-box">
@@ -31,21 +31,21 @@
 
         <div class="input-box">
           <label for="Passward">비밀번호</label> <br />
-          <input type="password" name="userpassward" class="log-box" id="Passward" placeholder="password" required /><br />
+          <input type="password" name="userpassword" class="log-box" id="Passward" placeholder="password" required /><br />
         </div>
 
         <div class="student-state">
           <h2>학적상태</h2>
           <div class="radio-box">
-            <input name="state" id="attending" type="radio" checked required />
+            <input name="state" id="attending" type="radio" value="ing" checked required />
             <label for="attending">재학</label><br />
           </div>
           <div class="radio-box">
-            <input name="state" id="take-off" type="radio" required />
+            <input name="state" id="take-off" type="radio" value="break" required />
             <label for="take-off">휴학</label><br />
           </div>
           <div class="radio-box">
-            <input name="state" id="graduated" type="radio" required />
+            <input name="state" id="graduated" type="radio" value="grad" required />
             <label for="graduated">졸업</label>
           </div>
         </div>
