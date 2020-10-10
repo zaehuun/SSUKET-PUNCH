@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Web Programming App" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/signin.css" />
+  </head>
+
+  <body>
+    <div id="sign-in">
+      <form class="form-signin" action="http://localhost:3000/login" method="POST">
+        <img src="images/logo_sample.png" alt="logo_sample" />
+        <h1 class="title">로그인</h1>
+
+        <div class="input-box">
+          <input type="text" name="student_id" class="log-box" placeholder="ex)20200000" maxlength="8" minlength="8" required autofocus /><br />
+        </div>
+        <div class="input-box">
+          <input type="password" name="st_password" class="log-box" placeholder="password" required /><br />
+        </div>
+
+        <a href="signup" target="_self" class="signup-link">회원가입</a>
+        <button class="log-button" type="submit">Log In</button>
+      </form>
+      <footer>
+        <p style="color: darkgrey">&copy;2020.10.07</p>
+        <!--나중에 적절한거 적는건 어떨까요..?ㅎ-->
+      </footer>
+    </div>
+
+    <script src="../js/signin.js"></script>
+  </body>
+</html>

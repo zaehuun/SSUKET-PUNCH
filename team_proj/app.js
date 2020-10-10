@@ -2,8 +2,19 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
+var router = require('./router/main')(app);
+
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
+
+//html 위치 정의
+app.set('views', __dirname + '/views');
+//html 렌더링 할 때 EJS엔진 사용하도록 설정
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
+
+app.use(express.static('public'));
 
 
 /////////////////////////////////////
