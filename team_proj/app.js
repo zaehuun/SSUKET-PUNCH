@@ -1,11 +1,24 @@
 var express = require('express');
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser'); //for post
+var mysql = require('mysql');
 var app = express();
 
 var router = require('./router/main')(app);
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
+
+
+//For mysql database connection setting
+var connection = mysql.createConnection({
+    host : 'localhost',
+    user : '유저 이름 입력',
+    password : '0000',
+    database : 'DB Name'
+});
+
+
+
 
 //html 위치 정의
 app.set('views', __dirname + '/views');
@@ -16,6 +29,11 @@ app.engine('html', require('ejs').renderFile);
 
 app.use(express.static('public'));
 
+app.use(function timeLog(req, res, next) {
+    let today = new Date();
+    console.log('Time: ', today);
+    next();
+ });
 
 /////////////////////////////////////
 /////////////**LOGIN *///////////////
