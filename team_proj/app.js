@@ -8,7 +8,7 @@ var router = require('./router/main')(app);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
-
+/*
 //For mysql database connection setting
 var connection = mysql.createConnection({
     host : 'localhost',
@@ -16,8 +16,22 @@ var connection = mysql.createConnection({
     password : '0000',
     database : 'DB Name'
 });
+*/
 
 
+
+//임시 디비
+let db = {};
+/*
+{
+    id : {
+        name : "  "
+        pw : "  "
+        ing : "  "
+    }
+}
+
+*/
 
 
 //html 위치 정의
@@ -42,10 +56,11 @@ app.use(function timeLog(req, res, next) {
 app.post('/login', function(req, res) {
     /*로그인 가능 여부 코드 추가 예정*/
     console.log('login code');
-    console.log('student_id: ' + req.body.student_id);
-    console.log('student_pw: ' + req.body.st_password);
-
-    res.send(req.body);
+    if (db[req.body.student_id]){
+        console.log(req.body);
+        res.send("로그인 완료");
+    }
+    res.send("회원가입 하세요");
 });
 
 
@@ -58,12 +73,13 @@ app.post('/login', function(req, res) {
 app.post('/register', function(req, res) {
     /*가입 가능 여부 코드 추가 예정*/
     console.log('register code');
-    console.log('이름: ' + req.body.username);
-    console.log('학번: ' + req.body.userid);
-    console.log('비번: ' + req.body.userpassword);
-    console.log('상태: ' + req.body.state);
-
-    res.send(req.body);
+    if (db[req.body.userid]){
+        res.send("이미 존재하는 회원");
+    }
+    db[req.body.userid] = req.body;
+    console.log(req.body);
+    res.send(db[req.body.userid]);
+    //res.send(req.body);
 });
 
 
