@@ -10,6 +10,13 @@ https://zaehuun.github.io/WebProject/team_proj/signin.html
 ```
 git clone 주소
 ```
+```
+디렉토리로 이동
+```
+
+```
+npm install
+'''
 
 ```
 node app.js
