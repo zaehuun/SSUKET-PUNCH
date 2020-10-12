@@ -6,7 +6,7 @@ https://zaehuun.github.io/WebProject/team_proj/signin.html
 ## 제가 나중에 정리 하겠습니다!...   
 중복 파일 삭제하는 식으로 정리하려 했는데 삭제 안 하고 정리하는 방법 알고 계시면 알려주세요   
 
-###실행   
+### 실행   
 ```
 git clone 주소
 ```
@@ -16,7 +16,7 @@ git clone 주소
 
 ```
 npm install
-'''
+```
 
 ```
 node app.js
