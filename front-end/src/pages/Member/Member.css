@@ -9,6 +9,10 @@
   cursor: pointer;
 }
 
+#member .profile .profile-img {
+  text-align: center;
+}
+
 #member .profile .profile-img img {
   width: 100%;
   border-radius: 50%;
@@ -34,7 +38,7 @@
 }
 
 #member .profile .profile-info h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
   font-size: 1.2em;
   color: #444;
@@ -46,8 +50,10 @@
 }
 
 #member .profile .profile-info p span {
+  margin: 0.5rem 0;
   margin-right: 0.7rem;
   padding: 5px;
+  display: inline-block;
   border-radius: 5px;
   background-color: #eee;
 }
@@ -123,4 +129,22 @@
 #member .col-3 {
   width: 25%;
   padding: 1rem 0;
+}
+
+@media (max-width: 769px) {
+  #member .profile .col-3 {
+    width: 100%;
+  }
+
+  #member .profile .col-9 {
+    width: 100%;
+  }
+
+  #member .profile .profile-img img {
+    width: 90%;
+  }
+
+  #member .profile .profile-info {
+    padding: 0 1rem;
+  }
 }
