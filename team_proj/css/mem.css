@@ -1,0 +1,115 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0 50px 0;
+}
+
+header img {
+    width: 150px; 
+    cursor: pointer;   
+}
+
+header .top-link{
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+header a,span{
+    text-align: right;
+    color: black;
+    float: right;
+    line-height: 10%;
+    text-decoration: none;
+    padding-right: 0.5rem;
+}
+
+p{
+    color: gray;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+
+.line{
+    text-align: center;
+    width: 90%;
+}
+
+.row .row-col1{
+    text-align: center;
+    display: inline-block;
+    width: 25%;
+}
+
+.row .row-col2{
+    display: inline-block;
+    width: 75%;
+    padding-top: 2rem;
+}
+
+.photo img{
+    border-radius: 50%;
+    width: 200px; 
+    height: 200px;  
+}
+
+.profile{
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 40rem;
+    line-height: 30px;
+}
+
+.title{
+    width: 100%;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.a{
+   width: 90%; 
+   text-align: center;
+   padding-left: 1rem;
+}
+
+.box{
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    line-height: 30px;
+    text-align: left;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.but-row{
+    width: 90%;
+    padding: 2rem;
+}
+
+button{
+    margin-left: auto;
+    padding: .7rem 1rem;
+    display: block;
+    border: none;
+    border-radius:.3rem;
+    background-color: #007bff;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 1rem;
+}
