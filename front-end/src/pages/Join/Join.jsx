@@ -15,7 +15,7 @@ function Join() {
     <section id="sign-up">
       <header>
         <Link to="/">
-          <img src="/images/logo_sample.png" className="logo-img" alt="logo_sample" />
+          <img src="/images/logo_test.png" className="logo-img" alt="logo_sample" />
         </Link>
       </header>
       <hr />

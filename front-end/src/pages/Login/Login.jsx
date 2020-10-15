@@ -14,7 +14,7 @@ function Login() {
   return (
     <section id="sign-in">
       <form className="form-signin" onSubmit={handleSubmit}>
-        <img src="/images/logo_sample.png" alt="logo_sample" />
+        <img src="/images/logo_test.png" alt="logo_sample" />
         <h1 className="title">로그인</h1>
 
         <div className="input-box">
