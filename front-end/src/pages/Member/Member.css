@@ -1,0 +1,126 @@
+#member {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+#member header img {
+  width: 150px;
+  cursor: pointer;
+}
+
+#member .profile .profile-img img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#member .profile .profile-info {
+  padding: 0 3rem;
+}
+
+#member .profile .profile-info h1 {
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  font-size: 3em;
+  /* color: #444; */
+  color: #ed6663;
+}
+
+#member .profile .profile-info h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5em;
+  color: #ed6663;
+}
+
+#member .profile .profile-info h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #444;
+}
+
+#member .profile .profile-info p {
+  margin-bottom: 2rem;
+  font-size: 0.9em;
+}
+
+#member .profile .profile-info p span {
+  margin-right: 0.7rem;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+#member .title h1 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #ed8363;
+}
+
+#member .content-box {
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+#member .btn-wrapper {
+  text-align: right;
+}
+
+#member .btn-wrapper button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #007bff;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#member .btn-wrapper button:hover {
+  transform: translateZ(0) scale(0.98);
+}
+
+#member footer {
+  text-align: center;
+}
+
+#member footer p {
+  color: darkgray;
+}
+
+#member .section-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+#member .col-12 {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+#member .col-9 {
+  width: 75%;
+  padding: 1rem 0;
+}
+
+#member .col-6 {
+  width: 50%;
+  padding: 1rem 0;
+}
+
+#member .col-4 {
+  width: 33%;
+  padding: 1rem 0;
+}
+
+#member .col-3 {
+  width: 25%;
+  padding: 1rem 0;
+}

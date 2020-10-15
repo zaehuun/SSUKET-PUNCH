@@ -25,14 +25,20 @@ function Login() {
           <input type="password" name="st_password" className="log-box" placeholder="password" required />
           <br />
         </div>
-        
+
         <Link to="/join" className="signup-link">
           회원가입
+        </Link>
+        <br />
+        <br />
+        <Link to="/member" className="signup-link">
+          멤버보기 임시링크
         </Link>
         <button className="log-button" type="submit">
           Log In
         </button>
       </form>
+
       <footer>
         <p>&copy;2020.10.07</p>
       </footer>
