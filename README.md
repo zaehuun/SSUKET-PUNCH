@@ -1,10 +1,11 @@
 # WebProject
-https://zaehuun.github.io/WebProject/team_proj/signin.html
+http://webproject-soongsil.surge.sh
    
       
 ## 라우팅 때문에 파일 구조를 변경 하고 다시 업로드 해서 중복 파일이 생겼습니다..   
 ## 제가 나중에 정리 하겠습니다!...   
-중복 파일 삭제하는 식으로 정리하려 했는데 삭제 안 하고 정리하는 방법 알고 계시면 알려주세요   
+중복 파일 삭제하는 식으로 정리하려 했는데 삭제 안 하고 정리하는 방법 알고 계시면 알려주세요  
+ㄴ 리액트로 옮겨서 team_proj 폴더 안에 있는 기존에 html css 파일들 지우겠습니다!!
 
 ### 실행   
 ```
