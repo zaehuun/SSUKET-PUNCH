@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Join.css";
 
 function Join() {
@@ -9,6 +10,7 @@ function Join() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    axios.post("/join");
     warning();
   };
   return (
@@ -24,19 +26,19 @@ function Join() {
         <h1 className="title">회원가입</h1>
         <br />
         <div className="input-box">
-          <label for="Name">이름</label> <br />
+          <label htmlFor="Name">이름</label> <br />
           <input type="text" name="username" className="log-box" id="Name" placeholder="ex)홍길동" required />
           <br />
         </div>
 
         <div className="input-box">
-          <label for="Student_id">학번</label> <br />
-          <input type="text" name="userid" className="log-box" id="Student-id" placeholder="ex)20200000" maxlength="8" minlength="8" required />
+          <label htmlFor="Student_id">학번</label> <br />
+          <input type="text" name="userid" className="log-box" id="Student-id" placeholder="ex)20200000" maxLength="8" minLength="8" required />
           <br />
         </div>
 
         <div className="input-box">
-          <label for="Passward">비밀번호</label> <br />
+          <label htmlFor="Passward">비밀번호</label> <br />
           <input type="password" name="userpassword" className="log-box" id="Passward" placeholder="password" required />
           <br />
         </div>
@@ -44,18 +46,18 @@ function Join() {
         <div className="student-state">
           <h2>학적상태</h2>
           <div className="radio-box">
-            <input name="state" id="attending" type="radio" value="ing" checked required />
-            <label for="attending">재학</label>
+            <input name="state" id="attending" type="radio" value="ing" required />
+            <label htmlFor="attending">재학</label>
             <br />
           </div>
           <div className="radio-box">
             <input name="state" id="take-off" type="radio" value="break" required />
-            <label for="take-off">휴학</label>
+            <label htmlFor="take-off">휴학</label>
             <br />
           </div>
           <div className="radio-box">
             <input name="state" id="graduated" type="radio" value="grad" required />
-            <label for="graduated">졸업</label>
+            <label htmlFor="graduated">졸업</label>
           </div>
         </div>
         <button className="log-button" type="submit">

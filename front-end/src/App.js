@@ -1,8 +1,10 @@
 import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import axios from "axios";
 import { Login, Join, Member } from "pages";
 
 function App() {
+  axios.defaults.baseURL = "http://base_url";
   return (
     <div className="App">
       <Router>

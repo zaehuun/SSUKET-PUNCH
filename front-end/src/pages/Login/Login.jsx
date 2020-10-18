@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Login.css";
 
 function Login() {
@@ -9,6 +10,7 @@ function Login() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    axios.post("/login");
     warning();
   };
   return (
@@ -18,7 +20,7 @@ function Login() {
         <h1 className="title">로그인</h1>
 
         <div className="input-box">
-          <input type="text" name="student_id" className="log-box" placeholder="ex)20200000" maxlength="8" minlength="8" required autofocus />
+          <input type="text" name="student_id" className="log-box" placeholder="ex)20200000" maxLength="8" minLength="8" required autoFocus />
           <br />
         </div>
         <div className="input-box">
