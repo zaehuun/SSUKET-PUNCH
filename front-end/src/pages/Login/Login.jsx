@@ -8,23 +8,32 @@ function Login() {
     alert("아직 준비중입니다.");
   };
 
+
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post("/login");
+    
+    axios({
+      method: 'post',
+      url: '/login/',
+      data : {
+        student_id : document.getElementById('student_id').value,
+        st_password : document.getElementById('st_password').value
+      }
+    });
     warning();
   };
   return (
     <section id="sign-in">
-      <form className="form-signin" onSubmit={handleSubmit}>
+      <form id="form" className="form-signin" onSubmit={handleSubmit}>
         <img src="/images/logo_test.png" alt="logo_sample" />
         <h1 className="title">로그인</h1>
 
         <div className="input-box">
-          <input type="text" name="student_id" className="log-box" placeholder="ex)20200000" maxLength="8" minLength="8" required autoFocus />
+          <input id="student_id" type="text" name="student_id" className="log-box" placeholder="ex)20200000" maxLength="8" minLength="8" required autoFocus />
           <br />
         </div>
         <div className="input-box">
-          <input type="password" name="st_password" className="log-box" placeholder="password" required />
+          <input id="st_password" type="password" name="st_password" className="log-box" placeholder="password" required />
           <br />
         </div>
 

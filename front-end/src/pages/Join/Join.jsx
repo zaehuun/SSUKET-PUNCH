@@ -10,7 +10,17 @@ function Join() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post("/join");
+
+    axios({
+      method: 'post',
+      url: '/join/',
+      data : {
+        username : document.getElementById('Name').value,
+        userid : document.getElementById('Student-id').value,
+        userpassword : document.getElementById('Passward').value,
+        state : document.getElementById('state').value
+      }
+    });
     warning();
   };
   return (
@@ -39,24 +49,24 @@ function Join() {
 
         <div className="input-box">
           <label htmlFor="Passward">비밀번호</label> <br />
-          <input type="password" name="userpassword" className="log-box" id="Passward" placeholder="password" required />
+          <input  type="password" name="userpassword" className="log-box" id="Passward" placeholder="password" required />
           <br />
         </div>
 
         <div className="student-state">
           <h2>학적상태</h2>
           <div className="radio-box">
-            <input name="state" id="attending" type="radio" value="ing" required />
+            <input id="state" name="state" type="radio" value="ing" required />
             <label htmlFor="attending">재학</label>
             <br />
           </div>
           <div className="radio-box">
-            <input name="state" id="take-off" type="radio" value="break" required />
+            <input name="state"  type="radio" value="break" required />
             <label htmlFor="take-off">휴학</label>
             <br />
           </div>
           <div className="radio-box">
-            <input name="state" id="graduated" type="radio" value="grad" required />
+            <input name="state"  type="radio" value="grad" required />
             <label htmlFor="graduated">졸업</label>
           </div>
         </div>

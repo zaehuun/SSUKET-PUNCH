@@ -4,7 +4,7 @@ import axios from "axios";
 import { Login, Join, Member } from "pages";
 
 function App() {
-  axios.defaults.baseURL = "http://base_url";
+  axios.defaults.baseURL = "http://localhost:5000/";
   return (
     <div className="App">
       <Router>
