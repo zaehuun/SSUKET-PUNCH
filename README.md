@@ -8,14 +8,27 @@ http://webproject-soongsil.surge.sh
 
 
 
+
+
 ### 실행   
 ```
 git clone 주소
 ```
 ```
-디렉토리로 이동
+front-end 디렉토리로 이동
 ```
 
+```
+npm install
+```
+
+```
+npm start
+```
+
+```
+back-end 디렉토리로 이동
+```
 ```
 npm install
 ```
@@ -25,5 +38,5 @@ node app.js
 ```
 
 ```
-localhost:3000 으로 접속
+localhost:5000 으로 접속
 ```
