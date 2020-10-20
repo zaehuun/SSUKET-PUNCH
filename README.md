@@ -36,7 +36,3 @@ npm install
 ```
 node app.js
 ```
-
-```
-localhost:5000 으로 접속
-```
