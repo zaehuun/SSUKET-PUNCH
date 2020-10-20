@@ -1,39 +1,17 @@
 var express = require('express');
 var bodyParser = require('body-parser'); //for post
 var mysql = require('mysql');
+const dbconfig = require('./config/database.js');
+const connection = dbconfig.init();
 const cors = require('cors');
 var app = express();
 
+dbconfig.connect(connection);
 //var router = require('./router/main')(app);
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 app.use(cors());
-
-/*
-//For mysql database connection setting
-var connection = mysql.createConnection({
-    host : 'localhost',
-    user : '유저 이름 입력',
-    password : '0000',
-    database : 'DB Name'
-});
-*/
-
-
-
-//임시 디비
-let db = {};
-/*
-{
-    id : {
-        name : "  "
-        pw : "  "
-        ing : "  "
-    }
-}
-
-*/
 
 
 //html 위치 정의
@@ -71,6 +49,10 @@ app.post('/join', function(req, res) {
 });
 
 app.get('/db',function(req,res){
-
+    connection.query('SELECT * from users', (error, rows)=>{
+        if (error) throw error;
+        console.log('User info is : ', rows);
+        res.send(rows);
+    });
 });
 app.listen(5000, () => console.log('listening on port 5000!'));
