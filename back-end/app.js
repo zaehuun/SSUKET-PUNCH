@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var bodyParser = require('body-parser'); //for post
 var mysql = require('mysql');
 const dbconfig = require('./config/database.js');
@@ -26,6 +27,9 @@ app.use(cors());
 로그인
 학번 : student_id
 비밀번호 : st_password
+
+성공 시 SUCCESS : 1
+실패 시 SUCCESS : 0
 */
 app.post('/login', function(req, res) {
     var id = req.body.student_id;
@@ -33,11 +37,11 @@ app.post('/login', function(req, res) {
     connection.query('SELECT count(*)  cnt from users where id=? and password=?',[id,pw], (error, rows)=>{
         if (error) throw error;
         var cnt = rows[0].cnt;
-        if (cnt == 1){
-            console.log("로그인 됨");
+        if (cnt == 1){ //로그인
+            res.send({'SUCCESS' : 1 });
         }
-        else{
-            console.log('로그인 안 됨');
+        else{ //로그인 불가
+            res.send({'SUCCESS' : 0 });
         }
     });
 });
@@ -49,6 +53,9 @@ app.post('/login', function(req, res) {
 학번 : userid
 비번 : userpassword
 학적st : state
+
+성공 시 SUCCESS : 1
+실패 시 SUCCESS : 0
 */
 app.post('/join', function(req, res) {
     var name = req.body.username;
@@ -58,21 +65,21 @@ app.post('/join', function(req, res) {
     connection.query('SELECT count(*)  cnt from users where id=? and password=?',[id,pw], (error, rows)=>{
         if (error) throw error;
         var cnt = rows[0].cnt;
-        if (cnt == 1){
-            console.log("이미 존재하는 계정");
+        if (cnt == 1){ //기존 회원 존재 -> 회원 가입 불가
+            res.send({'SUCCESS' : 0 });
         }
-        else{
+        else{ //회원 가입 가능
             connection.query('INSERT INTO Users (id, name, password, state) VALUES (?, ?, ?, ?)',[id,name,pw,st], (error, rows)=>{
                 if (error) throw error;
                 else{
-                    console.log('회원가입 완료')
+                    res.send({'SUCCESS' : 1 });
                 }
             });
         }
     });
 });
 
-app.get('/db',function(req,res){
+app.get('/members',function(req,res){
     connection.query('SELECT * from users', (error, rows)=>{
         if (error) throw error;
         console.log('User info is : ', rows);
