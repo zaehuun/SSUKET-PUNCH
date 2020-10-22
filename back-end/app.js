@@ -14,6 +14,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 app.use(cors());
 
+/* session setting */
+app.use(session({
+    secret: '피자먹고싶다',
+    resave: false,
+    saveUninitialized: true
+   }));
 
 //html 위치 정의
 //app.set('views', __dirname + '/views');
