@@ -44,10 +44,10 @@ app.post('/login', function(req, res) {
         if (error) throw error;
         var cnt = rows[0].cnt;
         if (cnt == 1){ //로그인
-            res.send({'SUCCESS' : 1 });
+            res.status(404).send({'SUCCESS' : 1 });
         }
         else{ //로그인 불가
-            res.send({'SUCCESS' : 0 });
+            res.status(200).send({'SUCCESS' : 0 });
         }
     });
 });
@@ -72,13 +72,13 @@ app.post('/join', function(req, res) {
         if (error) throw error;
         var cnt = rows[0].cnt;
         if (cnt == 1){ //기존 회원 존재 -> 회원 가입 불가
-            res.send({'SUCCESS' : 0 });
+            res.status(200).send({'SUCCESS' : 0 });
         }
         else{ //회원 가입 가능
             connection.query('INSERT INTO Users (id, name, password, state) VALUES (?, ?, ?, ?)',[id,name,pw,st], (error, rows)=>{
                 if (error) throw error;
                 else{
-                    res.send({'SUCCESS' : 1 });
+                    res.status(404).send({'SUCCESS' : 1 });
                 }
             });
         }
@@ -89,7 +89,7 @@ app.get('/members',function(req,res){
     connection.query('SELECT * from users', (error, rows)=>{
         if (error) throw error;
         console.log('User info is : ', rows);
-        res.send(rows);
+        res.status(404).send(rows);
     });
 });
 app.listen(5000, () => console.log('listening on port 5000!'));
