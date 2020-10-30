@@ -41,8 +41,8 @@ app.get('/session',function(req,res){
 학번 : student_id
 비밀번호 : st_password
 
-성공 시 SUCCESS : 1
-실패 시 SUCCESS : 0
+성공 시 SUCCESS : 1, 'id' : id
+실패 시 SUCCESS : 0, 'id' : null
 */
 app.post('/login', function(req, res) {
     var id = req.body.student_id;
@@ -51,10 +51,10 @@ app.post('/login', function(req, res) {
         if (error) throw error;
         var cnt = rows[0].cnt;
         if (cnt == 1){ //로그인
-            res.status(200).send({'SUCCESS' : 1 });
+            res.status(200).send({'SUCCESS' : 1, 'id' : id });
         }
         else{ //로그인 불가
-            res.status(404).send({'SUCCESS' : 0 });
+            res.status(404).send({'SUCCESS' : 0, 'id' : null });
         }
     });
 });
