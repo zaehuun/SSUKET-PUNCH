@@ -51,6 +51,9 @@ app.post('/login', function(req, res) {
         if (error) throw error;
         var cnt = rows[0].cnt;
         if (cnt == 1){ //로그인
+
+            req.session.id = id; //세션 저장
+            req.session.save();
             res.status(200).send({'SUCCESS' : 1, 'id' : id });
         }
         else{ //로그인 불가
@@ -58,6 +61,11 @@ app.post('/login', function(req, res) {
         }
     });
 });
+
+app.post('/logout', function(req,res){
+    delete req.session.id;
+    res.status(200).send({'SUCCESS' : 1});
+})
 
 
 /*
