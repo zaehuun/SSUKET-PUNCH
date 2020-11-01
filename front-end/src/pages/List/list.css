@@ -1,0 +1,147 @@
+body {
+    font-family: sans-serif;
+}
+
+ .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0 50px 0;
+}
+
+header img{
+    width: 150px;
+    cursor: pointer;
+}
+
+header div{
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+header div a{
+    text-align: right;
+    float: right;
+    color: black;
+    padding-left: 1rem;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+h1{
+    color: #ed6663;
+}
+
+h2{
+    cursor: pointer;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.form_box{
+    margin: 10px;
+    text-align: center;
+    background: #f2a791;
+    height: 70px;
+}
+
+.mem_box{
+    margin: 10px;
+    text-align: center;
+    background: #f2a791;
+    height: 200px;
+}
+
+
+.mem_box_dis{
+    height: 100%;
+}
+
+.img_loc{
+    width: 18%;
+    float: left;
+
+}
+
+.but_loc{
+    cursor: pointer;
+    border-radius: 5px;
+    float: left;
+    width: auto;
+    color: white;
+    font-size: 17px;
+    padding: .5rem .8rem;
+    border: none;
+    background-color: #ea714c;
+}
+
+.list_more_loc{
+    text-align: center;
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.list_more_btn{
+    cursor: pointer;
+    text-align: center;
+    background-color: #ea714c;
+    color: white;
+    font-size: 20px;
+    padding: .5rem .8rem;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+.select_box_des{
+    border: none;
+    box-shadow: none;
+    appearance: none;
+    background-position: center right;
+    border-radius: 0px;
+    margin-left: 2rem;
+    width: 15%;
+}
+
+.text_loc{
+    width: 60%;
+    float: left;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+form div{
+    text-align: center;
+    padding-top: 1.2rem;
+    
+}
+
+.mem_box img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+form div select{
+    border: 1px solid#999;
+    height: auto;
+    padding: .8em .5em;
+    font-family: inherit;
+    height: 30px;
+    cursor: pointer;
+}
+
+.line{
+    text-align: center;
+    width: 90%;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 1rem;
+} 
