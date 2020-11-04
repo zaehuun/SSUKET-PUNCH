@@ -82,7 +82,7 @@ function MemberList() {
       </form>
 
       {memberList.map(member => (
-        <div class="mem-box">
+        <div class="mem-box" key={member.studentId}>
           <div className="mem-img">
             <img src="/images/profile_temp.jpg" alt="profile-img" />
           </div>
