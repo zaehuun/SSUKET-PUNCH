@@ -4,6 +4,11 @@ import axios from "axios";
 import "./Join.css";
 
 function Join() {
+  let username = "";
+  let userid = "";
+  let userpw = "";
+  let state = "";
+
   const warning = () => {
     alert("아직 준비중입니다.");
   };
@@ -11,18 +16,36 @@ function Join() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    axios({
-      method: 'post',
-      url: '/join/',
-      data : {
-        username : document.getElementById('Name').value,
-        userid : document.getElementById('Student-id').value,
-        userpassword : document.getElementById('Passward').value,
-        state : document.getElementById('state').value
-      }
+    console.log(userid, userpw, state);
+    axios.post("/join", {
+      username,
+      userid,
+      userpw,
+      state,
     });
+    
     warning();
   };
+
+  const handleInput = e => {
+    switch (e.target.id) {
+      case "username":
+        username = e.target.value;
+        return;
+      case "userid":
+        userid = e.target.value;
+        return;
+      case "userpw":
+        userpw = e.target.value;
+        return;
+      case "state":
+        state = e.target.value;
+        return;
+      default:
+        return;
+    }
+  };
+
   return (
     <section id="sign-up">
       <header>
@@ -37,36 +60,36 @@ function Join() {
         <br />
         <div className="input-box">
           <label htmlFor="Name">이름</label> <br />
-          <input type="text" name="username" className="log-box" id="Name" placeholder="ex)홍길동" required />
+          <input type="text" name="username" className="log-box" id="username" placeholder="ex)홍길동" onChange={handleInput} required />
           <br />
         </div>
 
         <div className="input-box">
           <label htmlFor="Student_id">학번</label> <br />
-          <input type="text" name="userid" className="log-box" id="Student-id" placeholder="ex)20200000" maxLength="8" minLength="8" required />
+          <input type="text" name="userid" className="log-box" id="userid" placeholder="ex)20200000" maxLength="8" minLength="8" onChange={handleInput} required />
           <br />
         </div>
 
         <div className="input-box">
           <label htmlFor="Passward">비밀번호</label> <br />
-          <input  type="password" name="userpassword" className="log-box" id="Passward" placeholder="password" required />
+          <input type="password" name="userpw" className="log-box" id="userpw" placeholder="password" onChange={handleInput} required />
           <br />
         </div>
 
         <div className="student-state">
           <h2>학적상태</h2>
           <div className="radio-box">
-            <input id="state" name="state" type="radio" value="ing" required />
+            <input id="state" name="state" type="radio" value="ing" onChange={handleInput} required />
             <label htmlFor="attending">재학</label>
             <br />
           </div>
           <div className="radio-box">
-            <input name="state"  type="radio" value="break" required />
+            <input id="state" name="state" type="radio" value="break" onChange={handleInput} required />
             <label htmlFor="take-off">휴학</label>
             <br />
           </div>
           <div className="radio-box">
-            <input name="state"  type="radio" value="grad" required />
+            <input id="state" name="state" type="radio" value="grad" onChange={handleInput} required />
             <label htmlFor="graduated">졸업</label>
           </div>
         </div>
