@@ -1,0 +1,22 @@
+#nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#nav img {
+  width: 150px;
+  cursor: pointer;
+}
+
+#nav .menu a {
+  margin: 0 10px;
+  color: #ed6663;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#nav a:hover {
+  color: #fba433;
+}
