@@ -3,25 +3,41 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
-function Login() {
-  const warning = () => {
-    alert("아직 준비중입니다.");
-  };
-
+function Login({ history }) {
+  let inputID = "";
+  let inputPW = "";
 
   const handleSubmit = e => {
     e.preventDefault();
-    
-    axios({
-      method: 'post',
-      url: '/login/',
-      data : {
-        student_id : document.getElementById('student_id').value,
-        st_password : document.getElementById('st_password').value
-      }
-    });
-    warning();
+
+    axios
+      .post("/login", {
+        st_id: inputID,
+        st_pw: inputPW,
+      })
+      .then(response => {
+        // 로그인 성공 했을 때 코드
+      })
+      .catch(error => {
+        // 로그인 실패 했을 때 코드
+      });
+
+    history.push("/memberlist");
   };
+
+  const handleInput = e => {
+    switch (e.target.id) {
+      case "st_id":
+        inputID = e.target.value;
+        return;
+      case "st_pw":
+        inputPW = e.target.value;
+        return;
+      default:
+        return;
+    }
+  };
+
   return (
     <section id="sign-in">
       <form id="form" className="form-signin" onSubmit={handleSubmit}>
@@ -29,11 +45,11 @@ function Login() {
         <h1 className="title">로그인</h1>
 
         <div className="input-box">
-          <input id="student_id" type="text" name="student_id" className="log-box" placeholder="ex)20200000" maxLength="8" minLength="8" required autoFocus />
+          <input id="st_id" type="text" name="st_id" className="log-box" placeholder="ex)20200000" maxLength="8" minLength="8" onChange={handleInput} required autoFocus />
           <br />
         </div>
         <div className="input-box">
-          <input id="st_password" type="password" name="st_password" className="log-box" placeholder="password" required />
+          <input id="st_pw" type="password" name="st_pw" className="log-box" placeholder="password" onChange={handleInput} required />
           <br />
         </div>
 
