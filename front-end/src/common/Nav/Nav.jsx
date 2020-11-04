@@ -11,7 +11,7 @@ function Nav() {
       <div className="menu">
         <Link to="#">인맥 찾기</Link>
         <Link to="#">내 정보</Link>
-        <Link to="#">로그아웃</Link>
+        <Link to="/">로그아웃</Link>
       </div>
     </header>
   );
