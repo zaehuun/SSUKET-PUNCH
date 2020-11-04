@@ -1,0 +1,134 @@
+#member-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+#member-list .title {
+  margin: 2rem 0;
+}
+
+#member-list .title h1 {
+  font-weight: bold;
+  font-size: 2em;
+  color: #ed6663;
+}
+
+#member-list .search-form {
+  margin: 0.7rem 0;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d4d2d2;
+}
+
+#member-list .search-form select {
+  appearance: none;
+  width: 150px;
+  margin: 0 0.6rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+#member-list .search-form .arrow {
+  position: relative;
+}
+
+#member-list .search-form .arrow::after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 18px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #aaa transparent transparent transparent;
+}
+
+#member-list .mem-box {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background: #f1efef;
+}
+
+#member-list .mem-box .mem-img {
+  width: 200px;
+  text-align: center;
+}
+
+#member-list .mem-box .mem-img img {
+  width: 80%;
+  border-radius: 50%;
+}
+
+#member-list .mem-box .mem-info {
+  width: 650px;
+}
+
+#member-list .mem-box .mem-info h2 {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+#member-list .mem-box .mem-info h3 {
+  margin-bottom: 1.3rem;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+#member-list .mem-box .mem-info h4 {
+  font-weight: 500;
+  color: #504949;
+}
+
+#member-list .mem-box .mem-info a {
+  text-decoration: none;
+  color: #222;
+}
+
+#member-list .mem-box .btn-wrapper button {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #e97674;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#member-list .mem-box .btn-wrapper button:hover {
+  transform: translateZ(0) scale(1.02);
+}
+
+#member-list .more-btn-wrapper {
+  text-align: center;
+}
+
+#member-list .more-btn-wrapper {
+  margin-bottom: 3rem;
+}
+
+#member-list .more-btn-wrapper button {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #e97674;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#member-list .more-btn-wrapper button:hover {
+  transform: translateZ(0) scale(1.02);
+}
