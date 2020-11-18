@@ -38,15 +38,15 @@ app.get('/session',function(req,res){
 })
 /*
 로그인
-학번 : student_id
-비밀번호 : st_password
+학번 : userid
+비밀번호 : userpassword
 
 성공 시 SUCCESS : 1, 'id' : id
 실패 시 SUCCESS : 0, 'id' : null
 */
 app.post('/login', function(req, res) {
-    var id = req.body.student_id;
-    var pw = req.body.st_password;
+    var id = req.body.userid;
+    var pw = req.body.userpassword;
     connection.query('SELECT count(*)  cnt from users where id=? and password=?',[id,pw], (error, rows)=>{
         if (error) throw error;
         var cnt = rows[0].cnt;
