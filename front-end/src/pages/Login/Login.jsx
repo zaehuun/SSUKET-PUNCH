@@ -12,25 +12,26 @@ function Login({ history }) {
 
     axios
       .post("/login", {
-        st_id: inputID,
-        st_pw: inputPW,
+        userid: inputID,
+        userpassword: inputPW,
       })
       .then(response => {
         // 로그인 성공 했을 때 코드
+        history.push("/memberlist");
       })
       .catch(error => {
         // 로그인 실패 했을 때 코드
+        alert("아이디나 비밀번호가 틀립니다.");
       });
 
-    history.push("/memberlist");
   };
 
   const handleInput = e => {
     switch (e.target.id) {
-      case "st_id":
+      case "userid":
         inputID = e.target.value;
         return;
-      case "st_pw":
+      case "userpw":
         inputPW = e.target.value;
         return;
       default:
@@ -45,11 +46,11 @@ function Login({ history }) {
         <h1 className="title">로그인</h1>
 
         <div className="input-box">
-          <input id="st_id" type="text" name="st_id" className="log-box" placeholder="ex)20200000" maxLength="8" minLength="8" onChange={handleInput} required autoFocus />
+          <input id="userid" type="text" name="userid" className="log-box" placeholder="ex)20200000" maxLength="8" minLength="8" onChange={handleInput} required autoFocus />
           <br />
         </div>
         <div className="input-box">
-          <input id="st_pw" type="password" name="st_pw" className="log-box" placeholder="password" onChange={handleInput} required />
+          <input id="userpw" type="password" name="userpw" className="log-box" placeholder="password" onChange={handleInput} required />
           <br />
         </div>
 

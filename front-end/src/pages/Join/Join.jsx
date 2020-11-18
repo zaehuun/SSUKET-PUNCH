@@ -6,25 +6,23 @@ import "./Join.css";
 function Join() {
   let username = "";
   let userid = "";
-  let userpw = "";
+  let userpassword = "";
   let state = "";
-
-  const warning = () => {
-    alert("아직 준비중입니다.");
-  };
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    console.log(userid, userpw, state);
-    axios.post("/join", {
-      username,
-      userid,
-      userpw,
-      state,
-    });
-    
-    warning();
+    axios
+      .post("/join", {
+        username,
+        userid,
+        userpassword,
+        state,
+      })
+      .then(response => {
+        alert("회원가입이 완료되었습니다.");
+        window.location.pathname = "/";
+      });
   };
 
   const handleInput = e => {
@@ -36,7 +34,7 @@ function Join() {
         userid = e.target.value;
         return;
       case "userpw":
-        userpw = e.target.value;
+        userpassword = e.target.value;
         return;
       case "state":
         state = e.target.value;

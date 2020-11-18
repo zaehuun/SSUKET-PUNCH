@@ -9,9 +9,10 @@ function MemberList() {
   useEffect(() => {
     // 서버에서 멤버 리스트를 받아오는 axios
     axios
-      .get("/member")
+      .get("/members")
       .then(response => {
         // member를 받아memberList 변수에 저장하는 코드
+        console.log(response);
       })
       .catch(error => {
         // error handler
@@ -82,7 +83,7 @@ function MemberList() {
       </form>
 
       {memberList.map(member => (
-        <div class="mem-box" key={member.studentId}>
+        <div className="mem-box" key={member.studentId}>
           <div className="mem-img">
             <img src="/images/profile_temp.jpg" alt="profile-img" />
           </div>
