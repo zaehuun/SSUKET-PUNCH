@@ -5,12 +5,13 @@ USE project;
 
 테이블 생성
 CREATE TABLE IF NOT EXISTS users(
-     id VARCHAR(45) NOT NULL,
-     name VARCHAR(45) NOT NULL,
-     password VARCHAR(45) NOT NULL,
-     state VARCHAR(45) NOT NULL,
-     PRIMARY KEY (id));
-
+          id VARCHAR(45) NOT NULL, --학번
+          name VARCHAR(45) NOT NULL, --이름
+          password VARCHAR(45) NOT NULL, --비밀번호
+          state VARCHAR(45) NOT NULL, --학적 상태
+          dept VARCHAR(45) NOT NULL, --전공
+          msg VARCHAR(45) NOT NULL, --한 줄 소개
+          PRIMARY KEY (id));
 
 전체 회원 조회
 SELECT * from users
@@ -20,4 +21,4 @@ SELECT count(*)  cnt from users where id=? and password=?
 
 
 회원 가입
-INSERT INTO Users (id, name, password, state) VALUES (?, ?, ?, ?)
+INSERT INTO Users (id, name, password, state, dept, msg) VALUES (?, ?, ?, ?, ?, ?)

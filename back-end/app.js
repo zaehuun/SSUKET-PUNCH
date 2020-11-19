@@ -83,6 +83,9 @@ app.post('/join', function(req, res) {
     var id = req.body.userid;
     var pw = req.body.userpassword;
     var st = req.body.state;
+    var dept = req.body.req;
+    var msg = req.body.req;
+
     connection.query('SELECT count(*)  cnt from users where id=? and password=?',[id,pw], (error, rows)=>{
         if (error) throw error;
         var cnt = rows[0].cnt;
@@ -90,7 +93,7 @@ app.post('/join', function(req, res) {
             res.status(404).send({'SUCCESS' : 0 });
         }
         else{ //회원 가입 가능
-            connection.query('INSERT INTO Users (id, name, password, state) VALUES (?, ?, ?, ?)',[id,name,pw,st], (error, rows)=>{
+            connection.query('INSERT INTO Users (id, name, password, state, dept, msg) VALUES (?, ?, ?, ?, ?, ?)',[id,name,pw,st,dept,msg], (error, rows)=>{
                 if (error) throw error;
                 else{
                     res.status(200).send({'SUCCESS' : 1 });
