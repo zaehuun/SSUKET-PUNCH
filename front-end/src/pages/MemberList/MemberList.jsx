@@ -1,18 +1,18 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Nav, Footer } from "common";
 import "./MemberList.css";
 import { Link } from "react-router-dom";
 
 function MemberList() {
+  const [memberList, setMemberList] = useState([]);
+
   useEffect(() => {
-    // 서버에서 멤버 리스트를 받아오는 axios
     axios
       .get("/members")
       .then(response => {
-        // member를 받아memberList 변수에 저장하는 코드
-        console.log(response);
+        setMemberList(response.data);
       })
       .catch(error => {
         // error handler
@@ -22,27 +22,6 @@ function MemberList() {
   const warningMessage = () => {
     alert("아직 준비중입니다.");
   };
-
-  let memberList = [
-    {
-      name: "홍길동",
-      major: "스마트시스템소프트웨어학과",
-      studentId: 20161234,
-      message: "상태메세지",
-    },
-    {
-      name: "고길동",
-      major: "컴퓨터학부",
-      studentId: 20171234,
-      message: "상태메세지",
-    },
-    {
-      name: "황길동",
-      major: "소프트웨어학부",
-      studentId: 20181234,
-      message: "상태메세지",
-    },
-  ];
 
   return (
     <section id="member-list">
@@ -83,16 +62,16 @@ function MemberList() {
       </form>
 
       {memberList.map(member => (
-        <div className="mem-box" key={member.studentId}>
+        <div className="mem-box" key={member.id}>
           <div className="mem-img">
             <img src="/images/profile_temp.jpg" alt="profile-img" />
           </div>
           <div className="mem-info">
             <h2><Link to="/member">{member.name}</Link></h2>
             <h3>
-              {member.major} | {member.studentId}
+              {member.dept} | {member.id}
             </h3>
-            <h4>{member.message}</h4>
+            <h4>{member.msg}</h4>
           </div>
           <div className="btn-wrapper">
             <button onClick={warningMessage}>인맥 추가</button>
