@@ -83,8 +83,8 @@ app.post('/join', function(req, res) {
     var id = req.body.userid;
     var pw = req.body.userpassword;
     var st = req.body.state;
-    var dept = req.body.req;
-    var msg = req.body.req;
+    var dept = req.body.usermajor;
+    var msg = req.body.msg;
 
     connection.query('SELECT count(*)  cnt from users where id=? and password=?',[id,pw], (error, rows)=>{
         if (error) throw error;

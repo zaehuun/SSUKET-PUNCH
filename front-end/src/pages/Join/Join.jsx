@@ -6,8 +6,10 @@ import "./Join.css";
 function Join() {
   let username = "";
   let userid = "";
+  let usermajor = "";
   let userpassword = "";
   let state = "";
+  let msg = "";
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -16,8 +18,10 @@ function Join() {
       .post("/join", {
         username,
         userid,
+        usermajor,
         userpassword,
         state,
+        msg,
       })
       .then(response => {
         alert("회원가입이 완료되었습니다.");
@@ -33,11 +37,17 @@ function Join() {
       case "userid":
         userid = e.target.value;
         return;
+      case "usermajor":
+        usermajor = e.target.value;
+        return;
       case "userpw":
         userpassword = e.target.value;
         return;
       case "state":
         state = e.target.value;
+        return;
+      case "mymsg":
+        msg = e.target.value;
         return;
       default:
         return;
@@ -69,6 +79,12 @@ function Join() {
         </div>
 
         <div className="input-box">
+          <label htmlFor="Student_major">전공</label> <br />
+          <input type="text" name="usermajor" className="log-box" id="usermajor" placeholder="ex)스마트시스템소프트웨어학과" minLength="2" onChange={handleInput} required />
+          <br />
+        </div>
+
+        <div className="input-box">
           <label htmlFor="Passward">비밀번호</label> <br />
           <input type="password" name="userpw" className="log-box" id="userpw" placeholder="password" onChange={handleInput} required />
           <br />
@@ -91,6 +107,13 @@ function Join() {
             <label htmlFor="graduated">졸업</label>
           </div>
         </div>
+
+        <div className="input-box">
+          <label htmlFor="my_msg">자기소개</label> <br />
+          <input type="text" name="mymsg" className="log-box" id="mymsg" placeholder="한 줄로 자신을 표현해주세요" onChange={handleInput} required />
+          <br />
+        </div>
+
         <button className="log-button" type="submit">
           회원가입
         </button>
