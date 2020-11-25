@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lcang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Web Programming App" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet" />
+    <link rel="stylesheet" href="./a.css">
+
+</head>
+
+<body class="container showstep1">
+    <section id="member">
+        <header>
+            <Link to="/">
+            <img src="./images/logo_test.png" alt="logo-img" />
+            </Link>
+        </header>
+        <hr/>
+
+        <div class=row>
+            <div class=col-3>
+                <img src="./images/profile_temp.jpg" alt="profile-img">
+            </div>
+            <div class=col-7>
+                <div class=box>
+                    <h1>홍길동</h1>
+                    <h2>학생</h2>
+                    <h3>경력</h3>
+                    <div id=a>
+                        <span>학과 스마트 경진대회 수상</span>
+                        <span>학부 연구생 1년</span>
+                    </div>
+                    <form>
+                        <textarea id=career_form name=career cols="50" rows="5">경력 추가</textarea>
+                        <button>추가</button>
+                    </form>
+                    
+                    <h3>관심분야</h3>
+                    <div>
+                        <span>React</span>
+                        <span>WebFrontEnd</span>
+                        <span>Server</span>
+                        <span>Python</span>
+                        
+                    </div>
+                    <form>
+                        <textarea id=interest_form name=interest cols="50" rows="5">관심분야 추가</textarea>
+                        <button>추가/button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h1>Activity</h1>
+        <form class=content-box>
+            <textarea name=activity cols="100" rows="5">대외활동</textarea>
+        </form>
+
+        <h1>Ability</h1>
+        <form class=content-box>
+            <textarea name=ability cols="100" rows="5" >보유자격증</textarea>
+        </form>
+
+        <div class=btn>
+            <button>submit</button>
+        </div>
+
+        <footer>
+            <p style="color: darkgrey">&copy;2020.10.07</p>
+        </footer>
+    </section>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#member {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+#member .row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#member .col-3{
+    width: 30%;
+    padding: 1rem 0;
+}
+
+#member .col-3 img{
+    border-radius: 50%;
+    width: 100%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#member .col-7{
+    width: 70%;
+    padding: 1rem 0;
+}
+
+#member .col-7 .box{
+    padding-left: 2rem;
+    line-height: 1rem
+}
+
+#member .col-7 .box h1{
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    font-size: 3em;
+    color: #ed6663;
+}
+
+#member .col-7 .box h2{
+    color: #ed6663;
+    margin-bottom: 0.8rem;
+    font-size: 2.5em;
+}
+
+#member .col-7 .box h3{
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #444;
+}
+#member .col-7 .box div span{
+    margin: 0.5rem 0;
+    margin-right: 0.7rem;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+
+
+#member h1{
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #ed8363;
+}
+
+#member .content-box{
+    padding: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    line-height: 1rem;
+}
+
+#member .content-box textarea{
+    width: 100%;
+}
+
+#member .btn{
+    text-align: right;
+    padding-top: 2rem;
+}
+
+#member .btn button{
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: #007bff;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+footer{
+    text-align: center;
+}
+
+#member header img {
+    width: 150px;
+    cursor: pointer;
+}
