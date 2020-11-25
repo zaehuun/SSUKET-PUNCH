@@ -26,7 +26,11 @@ function Join() {
       .then(response => {
         alert("회원가입이 완료되었습니다.");
         window.location.pathname = "/";
-      });
+      })
+      .catch(error => {
+        // 로그인 실패 했을 때 코드
+        alert("이미 가입된 회원입니다.");
+      });;
   };
 
   const handleInput = e => {
