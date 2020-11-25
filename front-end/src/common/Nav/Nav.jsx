@@ -21,9 +21,9 @@ function Nav() {
         <img src="/images/logo_test.png" alt="logo-img" />
       </Link>
       <div className="menu">
-        <Link to="#">인맥 찾기</Link>
+        <Link to="/memberlist">인맥 찾기</Link>
         <Link to="#">내 정보</Link>
-        <a onClick={logout}>로그아웃</a>
+        <Link onClick={logout}>로그아웃</Link>
       </div>
     </header>
   );
