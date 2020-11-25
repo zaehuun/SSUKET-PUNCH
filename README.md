@@ -15,7 +15,7 @@ http://webproject-soongsil.surge.sh
 git clone 주소
 ```
 ```
-front-end 디렉토리로 이동
+back-end 디렉토리로 이동
 ```
 
 ```
@@ -26,13 +26,3 @@ npm install
 npm start
 ```
 
-```
-back-end 디렉토리로 이동
-```
-```
-npm install
-```
-
-```
-node app.js
-```
