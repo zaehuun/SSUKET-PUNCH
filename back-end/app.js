@@ -86,14 +86,14 @@ app.post('/join', function(req, res) {
     var dept = req.body.usermajor;
     var msg = req.body.msg;
 
-    connection.query('SELECT count(*)  cnt from users where id=? and password=?',[id,pw], (error, rows)=>{
+    connection.query('SELECT count(*)  cnt from users where id=?',[id], (error, rows)=>{
         if (error) throw error;
         var cnt = rows[0].cnt;
         if (cnt == 1){ //기존 회원 존재 -> 회원 가입 불가
             res.status(404).send({'SUCCESS' : 0 });
         }
         else{ //회원 가입 가능
-            connection.query('INSERT INTO Users (id, name, password, state, dept, msg) VALUES (?, ?, ?, ?, ?, ?)',[id,name,pw,st,dept,msg], (error, rows)=>{
+            connection.query('INSERT INTO users (id, name, password, state, dept, msg) VALUES (?, ?, ?, ?, ?, ?)',[id,name,pw,st,dept,msg], (error, rows)=>{
                 if (error) throw error;
                 else{
                     connection.query('INSERT INTO user (id, name) VALUES (?, ?)',[id,name], (error, rows)=>{
@@ -109,9 +109,12 @@ app.post('/join', function(req, res) {
 });
 
 app.post('/update/:id',function(req,res){
-
-
-
+    /*=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    작업 필요@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    */
 })
 
 
