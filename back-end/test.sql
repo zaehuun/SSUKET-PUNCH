@@ -21,4 +21,16 @@ SELECT count(*)  cnt from users where id=? and password=?
 
 
 회원 가입
-INSERT INTO Users (id, name, password, state, dept, msg) VALUES (?, ?, ?, ?, ?, ?)
+INSERT INTO users (id, name, password, state, dept, msg) VALUES (?, ?, ?, ?, ?, ?)
+
+
+
+
+CREATE TABLE IF NOT EXISTS user(
+          id VARCHAR(45) NOT NULL, --학번
+          name VARCHAR(45) NOT NULL, --이름
+          career VARCHAR(100) DEFAULT NULL, --경력
+          interest VARCHAR(100) DEFAULT NULL, --관심 분야
+          activity VARCHAR(100) DEFAULT NULL, -- 대외 활동
+          ability VARCHAR(100) DEFAULT NULL, --자격증
+          PRIMARY KEY (id));

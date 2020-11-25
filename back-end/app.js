@@ -96,7 +96,12 @@ app.post('/join', function(req, res) {
             connection.query('INSERT INTO Users (id, name, password, state, dept, msg) VALUES (?, ?, ?, ?, ?, ?)',[id,name,pw,st,dept,msg], (error, rows)=>{
                 if (error) throw error;
                 else{
-                    res.status(200).send({'SUCCESS' : 1 });
+                    connection.query('INSERT INTO user (id, name) VALUES (?, ?)',[id,name], (error, rows)=>{
+                        if (error) throw error;
+                        else{
+                            res.status(200).send({'SUCCESS' : 1 });
+                        }
+                    });
                 }
             });
         }
