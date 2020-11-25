@@ -3,7 +3,7 @@ CREATE DATABASE project;
 USE project;
 
 
-테이블 생성
+테이블 생성 - 회원 정보 테이블
 CREATE TABLE IF NOT EXISTS users(
           id VARCHAR(45) NOT NULL, --학번
           name VARCHAR(45) NOT NULL, --이름
@@ -25,7 +25,7 @@ INSERT INTO users (id, name, password, state, dept, msg) VALUES (?, ?, ?, ?, ?, 
 
 
 
-
+테이블 생성 - 회원 경력 테이블
 CREATE TABLE IF NOT EXISTS user(
           id VARCHAR(45) NOT NULL, --학번
           name VARCHAR(45) NOT NULL, --이름

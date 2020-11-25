@@ -108,6 +108,52 @@ app.post('/join', function(req, res) {
     });
 });
 
+app.post('/update/:id',function(req,res){
+
+
+
+})
+
+
+
+
+app.get('/member/:id', function(req,res){
+    console.log(req.params.id);
+    var id = req.params.id;
+    connection.query('SELECT count(*)  cnt from user where id=?',[id], (error, rows)=>{
+        if (error) throw error;
+        var cnt = rows[0].cnt;
+        if (cnt == 1){
+            connection.query('SELECT * from user where id=?',[id], (error,rows)=>{
+                if (error) throw error;
+                console.log('id' + rows[0].id);
+                console.log('name' + rows[0].name);
+                if (rows[0].career != null){
+                    rows[0].career = rows[0].career.split(',');
+                }
+                if (rows[0].activity != null){
+                    rows[0].activity = rows[0].activity.split(',');
+                }
+                if (rows[0].interest != null){
+                    rows[0].interest = rows[0].interest.split(',');
+                }
+                if (rows[0].ability != null){
+                    rows[0].ability = rows[0].ability.split(',');
+                }
+                console.log('career' + rows[0].career);
+                console.log('activity' + rows[0].activity);
+                console.log('ability' + rows[0].ability);
+
+                res.status(200).send(rows);
+            });
+        }
+        else{
+            res.status(404).send({'SUCCESS' : 0});
+        }
+    });
+});
+
+
 app.get('/members',function(req,res){
     connection.query('SELECT * from users', (error, rows)=>{
         if (error) throw error;
