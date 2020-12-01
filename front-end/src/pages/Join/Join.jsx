@@ -28,7 +28,6 @@ function Join() {
         window.location.pathname = "/";
       })
       .catch(error => {
-        // 로그인 실패 했을 때 코드
         alert("이미 가입된 회원입니다.");
       });;
   };
@@ -58,6 +57,16 @@ function Join() {
     }
   };
 
+  const handleMajorRadio = e => {
+    usermajor = e.target.value;
+    return;
+  }
+
+  const handleStateRadio = e => {
+    state = e.target.value;
+    return;
+  }
+
   return (
     <section id="sign-up">
       <header>
@@ -82,32 +91,52 @@ function Join() {
           <br />
         </div>
 
-        <div className="input-box">
-          <label htmlFor="Student_major">전공</label> <br />
-          <input type="text" name="usermajor" className="log-box" id="usermajor" placeholder="ex)스마트시스템소프트웨어학과" minLength="2" onChange={handleInput} required />
-          <br />
+        <div className="student-state">
+          <h2>전공</h2>
+          <div className="radio-box">
+            <input id="computer" name="usermajor" type="radio" value="컴퓨터학부" onChange={handleMajorRadio} required />
+            <label htmlFor="computer">컴퓨터학부</label>
+            <br />
+          </div>
+          <div className="radio-box">
+            <input id="software" name="usermajor" type="radio" value="소프트웨어학부" onChange={handleMajorRadio} required />
+            <label htmlFor="software">소프트웨어학부</label>
+            <br />
+          </div>
+          <div className="radio-box">
+            <input id="smart" name="usermajor" type="radio" value="스마트시스템소프트웨어학과" onChange={handleMajorRadio} required />
+            <label htmlFor="smart">스마트시스템소프트웨어학과</label>
+          </div>
+          <div className="radio-box">
+            <input id="global" name="usermajor" type="radio" value="글로벌미디어학부" onChange={handleMajorRadio} required />
+            <label htmlFor="global">글로벌미디어학부</label>
+          </div>
+          <div className="radio-box">
+            <input id="elect" name="usermajor" type="radio" value="전자정보공학부" onChange={handleMajorRadio} required />
+            <label htmlFor="elect">전자정보공학부</label>
+          </div>
         </div>
 
         <div className="input-box">
           <label htmlFor="Passward">비밀번호</label> <br />
-          <input type="password" name="userpw" className="log-box" id="userpw" placeholder="password" onChange={handleInput} required />
+          <input type="password" name="userpw" className="log-box" id="userpw" placeholder="password" onChange={handleStateRadio} required />
           <br />
         </div>
 
         <div className="student-state">
           <h2>학적상태</h2>
           <div className="radio-box">
-            <input id="state" name="state" type="radio" value="ing" onChange={handleInput} required />
+            <input id="attending" name="state" type="radio" value="ing" onChange={handleStateRadio} required />
             <label htmlFor="attending">재학</label>
             <br />
           </div>
           <div className="radio-box">
-            <input id="state" name="state" type="radio" value="break" onChange={handleInput} required />
+            <input id="take-off" name="state" type="radio" value="break" onChange={handleStateRadio} required />
             <label htmlFor="take-off">휴학</label>
             <br />
           </div>
           <div className="radio-box">
-            <input id="state" name="state" type="radio" value="grad" onChange={handleInput} required />
+            <input id="graduated" name="state" type="radio" value="grad" onChange={handleStateRadio} required />
             <label htmlFor="graduated">졸업</label>
           </div>
         </div>
