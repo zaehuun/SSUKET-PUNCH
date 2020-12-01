@@ -122,7 +122,7 @@ function MemberList() {
           </div>
           <div className="mem-info">
             <h2>
-              <Link to="/member">{member.name}</Link>
+              <Link to={`/member/${member.id}`} >{member.name}</Link>
             </h2>
             <h3>
               {member.dept} | {member.id}
@@ -135,9 +135,9 @@ function MemberList() {
         </div>
       ))}
 
-      <div className="more-btn-wrapper">
+      {/* <div className="more-btn-wrapper">
         <button onClick={warningMessage}>더 보기</button>
-      </div>
+      </div> */}
 
       <Footer />
     </section>

@@ -1,16 +1,38 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Member.css";
 
-function Member() {
-  const warning = () => {
-    alert("아직 준비중입니다.");
+function Member({ history, match }) {
+  const id = match.params.id;
+  const memberType = {
+    id: 0,
+    name: "",
+    interst: "",
+    career: "",
+    activity: "",
+    ability: "",
   };
+  const [memberData, setMemberData] = useState(memberType);
+
+  const gobackList = () => {
+    history.push("/memberlist");
+  };
+
+  useEffect(() => {
+    axios
+      .get(`/member/${id}`)
+      .then(res => {
+        setMemberData(res.data[0]);
+      })
+      .catch(error => {});
+  }, [id]);
 
   return (
     <section id="member">
       <header>
-        <Link to="/">
+        <Link to="/memberlist">
           <img src="/images/logo_test.png" alt="logo-img" />
         </Link>
       </header>
@@ -18,13 +40,13 @@ function Member() {
 
       <div className="profile section-row">
         <div className="col-3">
-          <div class="profile-img">
-            <img src="./images/profile_temp.jpg" alt="profile images" />
+          <div className="profile-img">
+            <img src="/images/profile_temp.jpg" alt="profile images" />
           </div>
         </div>
         <div className="col-9">
-          <div class="profile-info">
-            <h1>홍길동</h1>
+          <div className="profile-info">
+            <h1>{memberData.name}</h1>
             <h2>학생</h2>
             <h3>경력</h3>
             <p>
@@ -68,7 +90,7 @@ function Member() {
       </div>
 
       <div className="btn-wrapper">
-        <button onClick={warning}>목록</button>
+        <button onClick={gobackList}>목록</button>
       </div>
 
       <footer>
