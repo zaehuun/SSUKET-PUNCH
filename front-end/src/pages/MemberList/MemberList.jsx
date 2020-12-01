@@ -45,6 +45,8 @@ function MemberList() {
         return "글로벌미디어학부";
       case "computer":
         return "컴퓨터학부";
+      case "software":
+        return "소프트웨어학부";
       case "elect":
         return "전자정보공학부";
       default:
@@ -107,6 +109,7 @@ function MemberList() {
             <option value="smart">스마트시스템소프트웨어</option>
             <option value="global">글로벌미디어</option>
             <option value="computer">컴퓨터학부</option>
+            <option value="software">소프트웨어학부</option>
             <option value="elect">전자정보공학부</option>
           </select>
         </div>
