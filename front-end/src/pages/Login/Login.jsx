@@ -10,11 +10,24 @@ function Login({ history }) {
   const handleSubmit = e => {
     e.preventDefault();
 
+    const header = {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Cache: "no-cache",
+      },
+      credentials: "include",
+    };
+
     axios
-      .post("/login", {
-        userid: inputID,
-        userpassword: inputPW,
-      })
+      .post(
+        "/login",
+        {
+          userid: inputID,
+          userpassword: inputPW,
+        },
+        header
+      )
       .then(response => {
         // 로그인 성공 했을 때 코드
         history.push("/memberlist");
@@ -23,7 +36,6 @@ function Login({ history }) {
         // 로그인 실패 했을 때 코드
         alert("아이디나 비밀번호가 틀립니다.");
       });
-
   };
 
   const handleInput = e => {
