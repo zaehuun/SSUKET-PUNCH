@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
-import { Login, Join, Member, MemberList } from "pages";
+import { Login, Join, Member, MemberList, MemberEdit } from "pages";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:5000";
@@ -13,6 +13,7 @@ function App() {
           <Route path="/join" component={Join} />
           <Route path="/member/:id" component={Member} />
           <Route path="/memberlist" component={MemberList} />
+          <Route path="/edit/:id" component={MemberEdit} />
         </Switch>
       </Router>
     </div>
