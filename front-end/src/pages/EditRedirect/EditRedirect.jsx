@@ -9,7 +9,6 @@ function EditRedirect({ history }) {
       Cache: "no-cache",
     },
     credentials: "include",
-    test: "body 내용 잘가는지 테스트",
   };
 
   axios
