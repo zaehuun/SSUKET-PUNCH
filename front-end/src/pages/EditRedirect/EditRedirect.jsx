@@ -2,17 +2,9 @@
 import axios from "axios";
 
 function EditRedirect({ history }) {
-  const header = {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Cache: "no-cache",
-    },
-    credentials: "include",
-  };
-
+  axios.defaults.withCredentials = true;
   axios
-    .get("/session", header)
+    .get("/session")
     .then(res => {
       // redirect 부분
     })

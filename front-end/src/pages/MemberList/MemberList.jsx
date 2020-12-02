@@ -59,6 +59,7 @@ function MemberList() {
   };
 
   useEffect(() => {
+    axios.defaults.withCredentials = true;
     axios
       .get("/members")
       .then(response => {

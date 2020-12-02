@@ -21,6 +21,7 @@ function Member({ history, match }) {
   };
 
   useEffect(() => {
+    axios.defaults.withCredentials = true;
     axios
       .get(`/member/${id}`)
       .then(res => {

@@ -62,7 +62,7 @@ function MemberEdit({ match }) {
 
   const submitEdit = () => {
     alert("제작중입니다");
-
+    axios.defaults.withCredentials = true;
     // 밑에 axios로 memberData의 값 들을 전달 예정
     axios
       .put(`/update/${id}`, memberData)

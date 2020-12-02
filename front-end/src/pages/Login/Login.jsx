@@ -10,15 +10,15 @@ function Login({ history }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const header = {
+    /*const header = {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
         Cache: "no-cache",
       },
       credentials: "include",
-    };
-
+    };*/
+    axios.defaults.withCredentials = true;
     axios
       .post(
         "/login",
@@ -26,7 +26,7 @@ function Login({ history }) {
           userid: inputID,
           userpassword: inputPW,
         },
-        header
+        //header
       )
       .then(response => {
         // 로그인 성공 했을 때 코드
