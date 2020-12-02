@@ -6,19 +6,27 @@ const dbconfig = require('./config/database.js');
 const connection = dbconfig.init();
 const cors = require('cors');
 var app = express();
-
+let corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true
+}
 dbconfig.connect(connection);
 //var router = require('./router/main')(app);
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 /* session setting */
+//app.use(cookieParser('qwerasdf'));
 app.use(session({
-    secret: '피자먹고싶다',
+    secret: 'qwerasdf',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    /*cookie:{
+        httpOnly: true,
+        secure: false,
+    }*/
    }));
 
 //html 위치 정의
@@ -28,14 +36,19 @@ app.use(session({
 //app.engine('html', require('ejs').renderFile);
 //app.use(express.static('public'));
 app.get('/', function(req,res){
-    res.send(req.session.name);
+
+    res.send(req.session.userid);
 })
+/*
 app.get('/session',function(req,res){
-    req.session.name = "hoon";
+    //console.log(req.sessionID);
+    req.session.userid = "20201234";
     req.session.save(()=>{
-        res.redirect('/');
+        res.redirect('/logined');
     })
 })
+*/
+
 /*
 로그인
 학번 : userid
@@ -52,8 +65,10 @@ app.post('/login', function(req, res) {
         var cnt = rows[0].cnt;
         if (cnt == 1){ //로그인
 
-            req.session.id = id; //세션 저장
-            req.session.save();
+            req.session.userid = id; //세션 저장
+            //req.session.save();
+            console.log(req.session);
+            //res.writeHead(200,{"id":id});
             res.status(200).send({'SUCCESS' : 1, 'id' : id });
         }
         else{ //로그인 불가
@@ -63,7 +78,7 @@ app.post('/login', function(req, res) {
 });
 
 app.post('/logout', function(req,res){
-    delete req.session.id;
+    delete req.session.userid;
     res.status(200).send({'SUCCESS' : 1});
 })
 
@@ -79,6 +94,7 @@ app.post('/logout', function(req,res){
 실패 시 SUCCESS : 0
 */
 app.post('/join', function(req, res) {
+    //console.log(req.sessionID);
     var name = req.body.username;
     var id = req.body.userid;
     var pw = req.body.userpassword;
@@ -115,13 +131,25 @@ app.post('/update/:id',function(req,res){
     작업 필요@@@@@@@@@@@@@@@@@@@@@@@@@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     */
-})
+});
 
+app.get('/session',function(req,res){
 
+    console.log(req.session);
+    
+    if(req.session.userid){
+        connection.query('SELECT * from user where id=?',[req.session.userid], (error, rows)=>{
+            if (error) throw error;
+            console.log('User info is : ', rows);
+            res.status(200).send(rows);
+            
+        });
+    }
+});
 
 
 app.get('/member/:id', function(req,res){
-    console.log(req.params.id);
+    //console.log(req.params.id);
     var id = req.params.id;
     connection.query('SELECT count(*)  cnt from user where id=?',[id], (error, rows)=>{
         if (error) throw error;
@@ -158,6 +186,7 @@ app.get('/member/:id', function(req,res){
 
 
 app.get('/members',function(req,res){
+    console.log(req.session);
     connection.query('SELECT * from users', (error, rows)=>{
         if (error) throw error;
         console.log('User info is : ', rows);
