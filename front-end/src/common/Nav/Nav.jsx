@@ -22,7 +22,7 @@ function Nav() {
       </Link>
       <div className="menu">
         <Link to="/memberlist">인맥 찾기</Link>
-        <Link to="/edit/20160354">내 정보</Link>
+        <Link to="/edit">내 정보</Link>
         <Link to="#" onClick={logout}>로그아웃</Link>
       </div>
     </header>
