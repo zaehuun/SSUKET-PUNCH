@@ -54,8 +54,8 @@ function MemberList() {
     }
   };
 
-  const warningMessage = () => {
-    alert("아직 준비중입니다.");
+  const addFriend = () => {
+    alert("인맥으로 추가했습니다");
   };
 
   useEffect(() => {
@@ -131,7 +131,7 @@ function MemberList() {
             <h4>{member.msg}</h4>
           </div>
           <div className="btn-wrapper">
-            <button onClick={warningMessage}>인맥 추가</button>
+            <button onClick={addFriend}>인맥 추가</button>
           </div>
         </div>
       ))}
