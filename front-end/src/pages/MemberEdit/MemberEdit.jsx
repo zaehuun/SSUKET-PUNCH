@@ -74,8 +74,18 @@ function MemberEdit({ match }) {
     axios
       .get(`/member/${id}`)
       .then(res => {
-        res.data[0].interest = JSON.parse(res.data[0].interest);
-        res.data[0].career = JSON.parse(res.data[0].career);
+        if (!res.data[0].interest) {
+          res.data[0].interest = []
+        } else {
+          res.data[0].interest = JSON.parse(res.data[0].interest);
+        }
+
+        if (!res.data[0].career) {
+          res.data[0].career = []
+        } else {
+          res.data[0].career = JSON.parse(res.data[0].career);
+        }
+        
         setMemberData(res.data[0]);
       })
       .catch(error => {
