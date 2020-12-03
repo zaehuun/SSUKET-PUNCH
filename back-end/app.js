@@ -167,20 +167,18 @@ app.get('/member/:id', function(req,res){
                 if (rows[0].career != null){
                     rows[0].career = rows[0].career.split(',');
                 }
-                if (rows[0].activity != null){
+                /*if (rows[0].activity != null){
                     rows[0].activity = rows[0].activity.split(',');
                 }
-                /*
+                */
                 if (rows[0].interest != null){
                     rows[0].interest = rows[0].interest.split(',');
                 }
+                /*
                 if (rows[0].ability != null){
                     rows[0].ability = rows[0].ability.split(',');
                 }*/
-                console.log('career' + rows[0].career);
-                console.log('activity' + rows[0].activity);
-                console.log('ability' + rows[0].ability);
-
+                console.log(rows);
                 res.status(200).send(rows);
             });
         }
