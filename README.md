@@ -22,17 +22,17 @@ IT 인맥을 연결해주는 [로켓펀치](https://www.rocketpunch.com/)에서 
 - **[김재훈](https://github.com/zaehuun) (백 엔드)**
 > 백 엔드 작업 환경 세팅   
 mysql 연동 및 테이블 설계   
-로그인 API
+로그인 API   
 회원가입 API   
 전체 회원 조회 API   
-개인 프로필 조회 API
+개인 프로필 조회 API   
 CORS 처리   
 Session Control   
 
 - **[김이주](https://github.com/kimleeju) (백 엔드)**
 > API 설계   
 프론트, 백 엔드 데이터 통일화   
-CORS 모듈 설정
+CORS 모듈 설정   
 Session 모듈 설정   
 React, Express 1 line 실행 처리
   
