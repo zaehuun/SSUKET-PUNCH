@@ -9,8 +9,8 @@ function Member({ history, match }) {
   const memberType = {
     id: 0,
     name: "",
-    interst: "",
-    career: "",
+    interest: [],
+    career: [],
     activity: "",
     ability: "",
   };
@@ -25,6 +25,18 @@ function Member({ history, match }) {
     axios
       .get(`/member/${id}`)
       .then(res => {
+        if (!res.data[0].interest) {
+          res.data[0].interest = [];
+        } else {
+          res.data[0].interest = JSON.parse(res.data[0].interest);
+        }
+
+        if (!res.data[0].career) {
+          res.data[0].career = [];
+        } else {
+          res.data[0].career = JSON.parse(res.data[0].career);
+        }
+
         setMemberData(res.data[0]);
       })
       .catch(error => {});
@@ -51,15 +63,15 @@ function Member({ history, match }) {
             <h2>학생</h2>
             <h3>경력</h3>
             <p>
-              <span>학과 스마트 경진대회 수상</span>
-              <span>학부 연구생 1년</span>
+              {memberData.career.map((item, idx) => (
+                <span key={idx}>{item}</span>
+              ))}
             </p>
             <h3>관심분야</h3>
             <p>
-              <span>React</span>
-              <span>WebFrontEnd</span>
-              <span>Server</span>
-              <span>Python</span>
+              {memberData.interest.map((item, idx) => (
+                <span key={idx}>{item}</span>
+              ))}
             </p>
           </div>
         </div>
@@ -71,8 +83,7 @@ function Member({ history, match }) {
             <h1>Activity</h1>
           </div>
           <div className="content-box">
-            <p>대외활동</p>
-            <p>프로젝트</p>
+            <p>{memberData.activity}</p>
           </div>
         </div>
       </div>
@@ -83,9 +94,7 @@ function Member({ history, match }) {
             <h1>Ability</h1>
           </div>
           <div className="content-box">
-            <p>보유한 자격증</p>
-            <p>사용 가능 언어</p>
-            <p>등등등...</p>
+            <p>{memberData.ability}</p>
           </div>
         </div>
       </div>
