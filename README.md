@@ -1,14 +1,51 @@
-# SSUKET-PUNCH
-IT 인맥을 연결해주는 로켓펀치에서 영감을 얻어 제작하게 된 학교내 인맥 연결 플랫폼 SSUKET-PUNCH 입니다. 서로의 정보를 확인하고 나에게 맞는 학생을 찾을 수 있습니다. <u>(설명 좀 더 수정하고 추가좀 해주세요..)</u>
+# SSUKET-PUNCH 🚀
+IT 인맥을 연결해주는 [로켓펀치](https://www.rocketpunch.com/)에서 영감을 얻어 제작하게 된 학교 내 비즈니스 네트워크 형성 플랫폼 SSUKET-PUNCH 입니다.  
+각자 자신의 프로필을 등록하고 서로의 프로필을 확인하여 나에게 맞는 학생을 찾을 수 있습니다. 이를 통해 공모전 팀 빌딩 및 프로젝트 진행, 더 나아가 선 후배 간 취업 준비에 도움을 주자는 동기로 진행하게 된 프로젝트입니다.   
+## 👨‍💻구성원 및 역할
+- **[김재욱](https://github.com/kjwook7522) (프론트 엔드)**   
+> 프론트 엔드 작업 환경 세팅   
+리액트 컴포넌트 설계 및 구현   
+디렉토리 구조 설계   
+로그인 및 회원가입 백 엔드 연동   
+회원 조회 기능 구현   
+회원 조회 시 필터 기능 구현      
+회원 정보 수정 기능 구현    
 
+- **[김주영](https://github.com/kjyju3955)(프론트 엔드)**
+> 회원 정보 수정 페이지 구조 설계 및 디자인 제작   
+회원 정보 페이지 구조 설계 및 디자인 제작
+회원 리스트 페이지 구조 설계 및 디자인 제작   
+로그인 페이지 구조 설계 및 디자인 제작   
+리액트 페이지 라우팅 설계      
+ 
+- **[김재훈](https://github.com/zaehuun)(백 엔드)**
+> 백 엔드 작업 환경 세팅   
+mysql 연동 및 테이블 설계   
+로그인 API
+회원가입 API   
+전체 회원 조회 API   
+개인 프로필 조회 API
+CORS 처리   
+Session Control   
+
+- **[김이주](https://github.com/kimleeju)(백 엔드)**
+> API 설계   
+프론트, 백 엔드 데이터 통일화   
+CORS 모듈 설정
+Session 모듈 설정   
+React, Express 1 line 실행 처리
+  
 
 ## 🛠 기술스택
 * HTML
 * CSS
 * Javascript
-* Node.js
 * React
 * axios
+* Node.js
+* Express
+* express-session
+* Mysql
 
 
 ## 🗂 프론트엔드 디렉토리 구조
@@ -46,13 +83,13 @@ IT 인맥을 연결해주는 로켓펀치에서 영감을 얻어 제작하게 �
 ```
 git clone https://github.com/zaehuun/WebProject.git
 ```
-test.sql에 있는 쿼리문을 이용하여 mysql에 database table 생성
-그리고 back-end 디렉토리로 이동
-
 ```
-npm install
+back-end/test.sql에 있는 쿼리문을 이용하여 mysql에 database table 생성
 ```
-
+```
+cd front-end && npm install
+cd back-end && npm install
+```
 ```
 npm start
 ```
