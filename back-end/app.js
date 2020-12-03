@@ -126,8 +126,8 @@ app.post('/join', function(req, res) {
 
 app.put('/update/:id',function(req,res){
     var id = req.params.id;
-    var interest = req.body.interest.join(',');
-    var career = req.body.career.join(',');
+    var interest = JSON.stringify(req.body.interest);
+    var career = JSON.stringify(req.body.career);
     var activity = req.body.activity;
     var ability = req.body.ability;
     console.log(req.body);

@@ -4,7 +4,7 @@ import { Nav, Footer } from "common";
 import axios from "axios";
 import "./MemberEdit.css";
 
-function MemberEdit({ match }) {
+function MemberEdit({ history, match }) {
   const id = match.params.id;
   const memberType = {
     id: 0,
@@ -61,13 +61,16 @@ function MemberEdit({ match }) {
   };
 
   const submitEdit = () => {
-    alert("제작중입니다");
     axios.defaults.withCredentials = true;
-    // 밑에 axios로 memberData의 값 들을 전달 예정
     axios
       .put(`/update/${id}`, memberData)
-      .then(res => {})
-      .catch(error => {});
+      .then(res => {
+        alert("수정이 완료되었습니다.");
+        history.push("/memberlist");
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
@@ -75,17 +78,24 @@ function MemberEdit({ match }) {
       .get(`/member/${id}`)
       .then(res => {
         if (!res.data[0].interest) {
-          res.data[0].interest = []
+          res.data[0].interest = [];
         } else {
           res.data[0].interest = JSON.parse(res.data[0].interest);
         }
 
         if (!res.data[0].career) {
-          res.data[0].career = []
+          res.data[0].career = [];
         } else {
           res.data[0].career = JSON.parse(res.data[0].career);
         }
-        
+
+        if (!res.data[0].ability) {
+          res.data[0].ability = "";
+        }
+        if (!res.data[0].activity) {
+          res.data[0].activity = "";
+        }
+
         setMemberData(res.data[0]);
       })
       .catch(error => {
@@ -132,13 +142,13 @@ function MemberEdit({ match }) {
         </div>
 
         <div className="personal-info">
-          <h1>Ability</h1>
-          <textarea name="ability" id="ability" value={memberData.ability} onChange={handleTextarea}></textarea>
+          <h1>Activity</h1>
+          <textarea name="activity" id="activity" value={memberData.activity} onChange={handleTextarea}></textarea>
         </div>
 
         <div className="personal-info">
-          <h1>Activity</h1>
-          <textarea name="activity" id="activity" value={memberData.activity} onChange={handleTextarea}></textarea>
+          <h1>Ability</h1>
+          <textarea name="ability" id="ability" value={memberData.ability} onChange={handleTextarea}></textarea>
         </div>
 
         <div className="submit-btn-wrapper">
