@@ -124,13 +124,18 @@ app.post('/join', function(req, res) {
     });
 });
 
-app.post('/update/:id',function(req,res){
-    /*=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    작업 필요@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    */
+app.put('/update/:id',function(req,res){
+    var id = req.params.id;
+    var interest = req.body.interest.join(',');
+    var career = req.body.career.join(',');
+    var activity = req.body.activity;
+    var ability = req.body.ability;
+    console.log(req.body);
+    connection.query('UPDATE user SET interest=?, career=?, activity=?, ability=? where id=?',[interest,career,activity,ability,id], (error, rows)=>{
+        if (error) throw error;
+
+        res.status(200).send({"id":id});
+    });
 });
 
 app.get('/session',function(req,res){
@@ -165,12 +170,13 @@ app.get('/member/:id', function(req,res){
                 if (rows[0].activity != null){
                     rows[0].activity = rows[0].activity.split(',');
                 }
+                /*
                 if (rows[0].interest != null){
                     rows[0].interest = rows[0].interest.split(',');
                 }
                 if (rows[0].ability != null){
                     rows[0].ability = rows[0].ability.split(',');
-                }
+                }*/
                 console.log('career' + rows[0].career);
                 console.log('activity' + rows[0].activity);
                 console.log('ability' + rows[0].ability);
