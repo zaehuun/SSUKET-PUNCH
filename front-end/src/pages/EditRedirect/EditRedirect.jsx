@@ -7,13 +7,12 @@ function EditRedirect({ history }) {
     .get("/session")
     .then(res => {
       // redirect 부분
+      const memberData = res.data[0];
+      history.push(`/edit/${memberData.id}`);
     })
     .catch(error => {
       console.log(error);
     });
-
-  // 임시 이동
-  history.push("/edit/20160354");
 
   return null;
 }
