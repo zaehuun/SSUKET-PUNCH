@@ -12,14 +12,14 @@ IT 인맥을 연결해주는 [로켓펀치](https://www.rocketpunch.com/)에서 
 회원 조회 시 필터 기능 구현      
 회원 정보 수정 기능 구현    
 
-- **[김주영](https://github.com/kjyju3955)(프론트 엔드)**
+- **[김주영](https://github.com/kjyju3955) (프론트 엔드)**
 > 회원 정보 수정 페이지 구조 설계 및 디자인 제작   
 회원 정보 페이지 구조 설계 및 디자인 제작   
 회원 리스트 페이지 구조 설계 및 디자인 제작   
 로그인 페이지 구조 설계 및 디자인 제작   
 리액트 페이지 라우팅 설계      
  
-- **[김재훈](https://github.com/zaehuun)(백 엔드)**
+- **[김재훈](https://github.com/zaehuun) (백 엔드)**
 > 백 엔드 작업 환경 세팅   
 mysql 연동 및 테이블 설계   
 로그인 API
@@ -29,7 +29,7 @@ mysql 연동 및 테이블 설계
 CORS 처리   
 Session Control   
 
-- **[김이주](https://github.com/kimleeju)(백 엔드)**
+- **[김이주](https://github.com/kimleeju) (백 엔드)**
 > API 설계   
 프론트, 백 엔드 데이터 통일화   
 CORS 모듈 설정
