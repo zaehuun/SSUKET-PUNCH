@@ -119,7 +119,7 @@ function Join() {
 
         <div className="input-box">
           <label htmlFor="Passward">비밀번호</label> <br />
-          <input type="password" name="userpw" className="log-box" id="userpw" placeholder="password" onChange={handleStateRadio} required />
+          <input type="password" name="userpw" className="log-box" id="userpw" placeholder="password" onChange={handleInput} required />
           <br />
         </div>
 
