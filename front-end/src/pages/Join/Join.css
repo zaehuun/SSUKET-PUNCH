@@ -12,12 +12,14 @@
 }
 
 #sign-up .form-signup .title {
+  font-weight: bold;
   font-size: 2.5em;
+  color: #e97674;
 }
 
 #sign-up .input-box {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 2rem;
   text-align: left;
 }
 
@@ -31,8 +33,13 @@
   font-size: 1em;
 }
 
+#sign-up .log-box:focus {
+  outline: none;
+  border: 1px solid #e97674;
+}
+
 #sign-up .student-state {
-  margin-bottom: 1rem;
+  margin: 3rem 0;
   text-align: left;
 }
 
@@ -47,7 +54,7 @@
 
 #sign-up .log-button {
   width: 100%;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   padding: 0.7rem 1rem;
   display: block;
   border: none;
