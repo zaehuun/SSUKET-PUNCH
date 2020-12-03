@@ -58,11 +58,34 @@
 
 #member-edit .center-box .personal-info .content-list span {
   margin: 0.5rem 0;
-  margin-right: 0.7rem;
+  margin-right: 1.5rem;
   padding: 5px;
+  position: relative;
   display: inline-block;
   border-radius: 5px;
   background-color: #eee;
+}
+
+#member-edit .center-box .personal-info .content-list span .close {
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: -7px;
+  right: -14px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #ccc;
+  font-size: 0.9em;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#member-edit .center-box .personal-info .content-list span .close:hover {
+  transform: translateZ(0) scale(1.2);
 }
 
 #member-edit .center-box .personal-info input {

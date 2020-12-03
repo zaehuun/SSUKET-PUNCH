@@ -22,7 +22,9 @@ function MemberEdit({ history, match }) {
     activity: "",
   });
 
-  const addCareer = () => {
+  const addCareer = e => {
+    e.preventDefault();
+
     let newData = { ...memberData };
     newData.career.push(inputs.career);
     setMemberData(newData);
@@ -33,9 +35,35 @@ function MemberEdit({ history, match }) {
     return;
   };
 
-  const addInterest = () => {
+  const addInterest = e => {
+    e.preventDefault();
+    
     let newData = { ...memberData };
     newData.interest.push(inputs.interest);
+    setMemberData(newData);
+    setInputs({
+      ...inputs,
+      interest: "",
+    });
+    return;
+  };
+
+  const removeCareer = e => {
+    const idx = e.currentTarget.id;
+    let newData = { ...memberData };
+    newData.career.splice(idx, 1);
+    setMemberData(newData);
+    setInputs({
+      ...inputs,
+      career: "",
+    });
+    return;
+  };
+
+  const removeInterest = e => {
+    const idx = e.currentTarget.id;
+    let newData = { ...memberData };
+    newData.interest.splice(idx, 1);
     setMemberData(newData);
     setInputs({
       ...inputs,
@@ -123,22 +151,38 @@ function MemberEdit({ history, match }) {
           <h1>경력</h1>
           <div className="content-list">
             {memberData.career.map((item, idx) => (
-              <span key={idx}>{item}</span>
+              <span key={idx}>
+                {item}
+                <span className="close" id={idx} onClick={removeCareer}>
+                  x
+                </span>
+              </span>
             ))}
           </div>
-          <input type="text" name="career" placeholder="추가할 경력을 입력해주세요" value={inputs.career} onChange={handleInput} />
-          <button onClick={addCareer}>추가</button>
+
+          <form onSubmit={addCareer}>
+            <input type="text" name="career" placeholder="추가할 경력을 입력해주세요" value={inputs.career} onChange={handleInput} />
+            <button onClick={addCareer}>추가</button>
+          </form>
         </div>
 
         <div className="personal-info">
           <h1>관심분야</h1>
           <div className="content-list">
             {memberData.interest.map((item, idx) => (
-              <span key={idx}>{item}</span>
+              <span key={idx}>
+                {item}
+                <span className="close" id={idx} onClick={removeInterest}>
+                  x
+                </span>
+              </span>
             ))}
           </div>
-          <input type="text" name="interest" placeholder="추가할 관심분야를 입력해주세요" value={inputs.interest} onChange={handleInput} />
-          <button onClick={addInterest}>추가</button>
+
+          <form onSubmit={addInterest}>
+            <input type="text" name="interest" placeholder="추가할 관심분야를 입력해주세요" value={inputs.interest} onChange={handleInput} />
+            <button onClick={addInterest}>추가</button>
+          </form>
         </div>
 
         <div className="personal-info">
