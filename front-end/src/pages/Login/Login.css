@@ -31,6 +31,11 @@
   font-size: 1em;
 }
 
+#sign-in .log-box:focus {
+  outline: none;
+  border: 1px solid #e97674;
+}
+
 #sign-in .signup-link {
   margin-bottom: 0.7rem;
   color: gray;

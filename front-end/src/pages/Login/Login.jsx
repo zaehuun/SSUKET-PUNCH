@@ -71,9 +71,6 @@ function Login({ history }) {
         </Link>
         <br />
         <br />
-        <Link to="/member" className="signup-link">
-          멤버보기 임시링크
-        </Link>
         <button className="log-button" type="submit">
           Log In
         </button>
