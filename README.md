@@ -64,9 +64,10 @@ npm start
 <img width="100%" alt="login" src="https://user-images.githubusercontent.com/29251371/101071780-6944e000-35e0-11eb-8a9e-82003bc0ba8d.png">
 
 
-### 회원 찾기 페이지
+#### 회원 찾기 페이지
 <img width="100%" alt="member" src="https://user-images.githubusercontent.com/29251371/101071792-6e099400-35e0-11eb-9088-8108dced5e22.png">
 
 
-### 회원 정보 수정 페이지
-![memberedit](https://user-images.githubusercontent.com/29251371/101071796-6fd35780-35e0-11eb-90bc-03a6b304e3e8.jpg)
+#### 회원 정보 수정 페이지
+<img width="100%" alt="memberedit" src="https://user-images.githubusercontent.com/29251371/101072648-b07fa080-35e1-11eb-975d-3067b8127cfa.png">
+
