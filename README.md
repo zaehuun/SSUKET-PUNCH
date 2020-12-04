@@ -109,3 +109,5 @@ npm start
 #### 회원 정보 수정 페이지
 <img width="100%" alt="memberedit" src="https://user-images.githubusercontent.com/29251371/101072648-b07fa080-35e1-11eb-975d-3067b8127cfa.png">
 
+## 🎥시연 영상
+[유튜브 링크](https://youtu.be/6sgTFv4BzbU)
